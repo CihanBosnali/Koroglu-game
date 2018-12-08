@@ -5,6 +5,7 @@
     <title>Köroğlu Oyunu</title>
     <style>
     html { 
+      height: 100%;
       background: url(images/audrius-sutkus-702652-unsplash.jpg) no-repeat center center fixed; 
       -webkit-background-size: cover;
       -moz-background-size: cover;
@@ -12,12 +13,58 @@
       background-size: cover;
     }
 
+    body {
+      height: 100%;
+    }
+
+    .button {
+      background-color: red;
+      border: none;
+      color: black;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 15px;
+      margin: 6px 6px;
+      cursor: pointer;
+      border-radius: 8px;
+      font-family: Arial;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+
+    .header {
+      color: red;
+      font-family: Arial;
+      font-size: 45px;
+    }
+
+
+    .container{
+      text-align: center;
+      background-color: #fff;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      width: 20%;
+    }
+
     </style>
   </head>
   <body>
-    <h1>Köroğlu</h1>
-    <h3>Oyuna Hoşgeldin</h3>
-    <a href="#">Sign In</a>
-    <a href="#">Sign Up</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+      <br> <br>
+      <h1 class="header">Köroğlu</h1>
+      <h3>Oyuna Hoşgeldin</h3>
+      <br>
+      <a class="button" href="#">Sign In</a>
+      <a class="button" href="#">Sign Up</a>
+      <br><br>
+    </div>
   </body>
 </html>

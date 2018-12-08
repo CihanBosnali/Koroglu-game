@@ -73,9 +73,20 @@
   <script>
     
     function login(){
-      username = document.getElementById("userpath").value
-      passcode = document.getElementById("passpath").value
-      window.location.href="game.html" + "?username="+username+"&passcode="+passcode
+      username = document.getElementById("userpath").value;
+      passcode = document.getElementById("passpath").value;
+      if (username != ""){
+        if (passcode != ""){
+          passed = decrypt(username, passcode);
+          window.location.href="game.html" + "?passed="+passed;
+        }
+      } else {
+        alert("Kullanıcı Adı Boş Bırakılamaz")
+      }
+    }
+
+    function decrypt(username, passcode){
+      return passcode.toUpperCase
     }
 
   </script>

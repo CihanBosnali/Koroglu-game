@@ -70,7 +70,11 @@
     <script>
         function getnewuser(){
             username = document.getElementById("userpath").value
-            window.location.href='game.html' + "?newuser=" + username
+            if (username != ""){
+                window.location.href='game.html' + "?newuser=" + username
+            } else {
+                alert("Kullanıcı Adı Boş Bırakılamaz!")
+            }
         }
     </script>
   </body>

@@ -61,10 +61,22 @@
       <br> <br>
       <h1 class="header">Giriş Yap</h1>
       <br>
+      <h5>Kullanıcı Adınızı Girin</h5>
+      <input type="text" id="userpath">
       <h5>Passcode'unuzu Girin</h5>
       <input type="text" id="passpath">
-      <input type="button" value="Giriş Yap" id="passcontrol"/>
+      <br><br>
+      <input type="button" onclick="login()" value="Giriş Yap" id="passcontrol"/>
       <br><br>
     </div>
   </body>
+  <script>
+    
+    function login(){
+      username = document.getElementById("userpath").value
+      passcode = document.getElementById("passpath").value
+      window.location.href="game.html" + "?username="+username+"&passcode="+passcode
+    }
+
+  </script>
 </html>

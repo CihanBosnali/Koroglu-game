@@ -102,7 +102,40 @@
         <p>20</p>
       </div>
     </li>
+    <li>
+      <div class="container">
+        <h2 style="margin-left: 50px; margin-right: 50px; margin-top: 5px;padding-top: 5px; height: 50px;">DENEYİM</h2>
+        <p>Ticari: 20 | Savaşçı: 20 | Yetiştirici: 10</p>
+      </div>
+    </li>
   </ul>
+
+
+  <canvas id="myCanvas" width="1400" height="600" style="border:2px solid">
+    <img src="images/castle.png" id="castle">
+    <img src="images/horse.png" id="horse" width="100px">
   
+  </canvas>
+
+
+  <script>
+    window.onload = function(){
+      var canvas = document.getElementById("myCanvas");
+      var context = canvas.getContext("2d");
+
+      var castle=document.getElementById("castle");
+      context.drawImage(castle, 100, 50);
+
+      var horse = document.getElementById("horse");
+      for (let i = 0; i < 4; i++) {
+        if (i == 0){
+          context.drawImage(horse, 100, 300)
+        } else {
+          context.drawImage(horse, 100 + 300*i, 200 + (50*i))
+        }
+      }
+    }
+  
+  </script>
   </body>
 </html>

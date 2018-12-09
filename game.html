@@ -218,13 +218,13 @@
 
         <button type="button" onclick = "AtYetistirme()"> At Yetiştir </button>
        
-        <button type="button" onclick = "KıratImprove()"> Kır Atı Geliştir </button>
+        <button type="button" onclick = "KiratImprove()"> Kır Atı Geliştir </button>
 
         <button type="button1" onclick = "BattleToBolu()"> Bolu ile Savaş </button>
 
         <button type="button1" onclick = "RobberyforKervan()"> Kervan Soy </button>
 
-        <p id="demo"></p>
+        <p id="demo2"></p>
 
         <script type="text/javascript">
 
@@ -432,13 +432,17 @@
     }
     
     function AtYetistirme() {
-      Yemek -= 2;
-      At += 1;
-      document.getElementById('demo').innerHTML = 'Yemek: ' + Yemek + ' At sayın: ' + At;
-      duzeltme()
+      if (Yemek == 0){
+        alert("Yemeğin Yetersiz!")
+      } else {
+        Yemek -= 2;
+        At += 1;
+        document.getElementById('demo2').innerHTML = 'Yemek: ' + Yemek + ' At sayın: ' + At;
+        duzeltme()
+      }
     }
 
-    function KıratImprove() {
+    function KiratImprove() {
       if (level < 2){
         alert("Level 2'de Açılır");
       } else {

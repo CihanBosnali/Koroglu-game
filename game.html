@@ -452,12 +452,35 @@
           Silah += 5;
           Yemek -= 2;
           Para -= 1;
+          document.getElementById('demo2').innerHTML = 'Savaş Gücü: ' + Silah + ' Yemek: ' + Yemek + ' Para: ' + Para;
+          duzeltme()
         }
       }
     }
 
     function BattleToBolu() {
-
+      if (level < 4){
+        alert("Level 4'de Açılır");
+      } else {
+        if (UserValues.war_experience < 20){
+          alert("En az 20 savaşçı deneyimine ihtiyacın var.");
+        } else {
+          if (Silah < 6){
+            alert("Silahın yok. Adamlar topla tüfekle geliyor. Taş mı atacaksın?!?");
+          } else {
+            if (Can < 6){
+              alert("Bu aksiyonu gerçekleştirecek kadar sağlıklı değilsiniz!");
+            } else {
+              Silah -= 5;
+              Can -= Math.floor(Math.random() * 6) + 1; ;
+              Para += Math.floor(Math.random() * 10) + 1;
+              document.getElementById('demo2').innerHTML = 'Savaş Gücü: ' + Silah + ' Can: ' + Can + ' Para: ' + Para;
+              duzeltme()
+            }
+          }
+          
+        }
+      }
     }
 
     function RobberyforKervan() {

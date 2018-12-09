@@ -68,51 +68,52 @@
     <li>
       <div class="container">
         <img src="images/sword.png" style="margin-left: 50px; margin-right: 50px; margin-top: 5px; height: 50px; transform: rotate(90deg);">
-        <p>20</p>
+        <p id="fightpower">20</p>
       </div>
     </li>
     <li>
       <div class="container">
         <img src="images/money.png" style="margin-left: 50px; margin-right: 50px; margin-top: 5px; height: 50px;">
-        <p>20</p>
+        <p id="money">20</p>
       </div>
     </li>
     <li>
       <div class="container">
         <img src="images/horse.png" style="margin-left: 50px; margin-right: 50px; margin-top: 5px; height: 50px;">
-        <p>20</p>
+        <p id="horse">20</p>
       </div>
     </li>
     <li>
       <div class="container">
         <img src="images/hearth.png" style="margin-left: 50px; margin-right: 50px; margin-top: 5px; height: 50px;">
-        <p>20</p>
+        <p id="health">20</p>
       </div>
     </li>
     <li>
       <div class="container">
         <img src="images/food.png" style="margin-left: 50px; margin-right: 50px; margin-top: 5px; height: 50px;">
-        <p>20</p>
+        <p id="food">20</p>
       </div>
     </li>
     <li>
       <div class="container">
         <h2 style="margin-left: 50px; margin-right: 50px; margin-top: 5px;padding-top: 5px; height: 50px;">SEVİYE</h2>
-        <p>20</p>
+        <p id="level">20</p>
       </div>
     </li>
     <li>
       <div class="container">
         <h2 style="margin-left: 50px; margin-right: 50px; margin-top: 5px;padding-top: 5px; height: 50px;">DENEYİM</h2>
-        <p>Ticari: 20 | Savaşçı: 20 | Yetiştirici: 10</p>
+        <p id="experiences">Ticari: 20 | Savaşçı: 20 | Yetiştirici: 10</p>
       </div>
     </li>
   </ul>
 
   <canvas id="myCanvas" width="1400" height="600">
-    <img src="images/castle.png" id="castle">
-    <img src="images/horse.png" id="horse" width="100px">
-    <img src="images/ottomany.png" id="ottomanboy">
+    <img src="images/oca.png" id="villageimage">
+    <img src="images/castle.png" id="castleimage">
+    <img src="images/horse.png" id="horseimage" width="100px">
+    <img src="images/ottomany.png" id="ottomanboyimage">
   </canvas>
 
   <script>
@@ -143,19 +144,37 @@
           horse_experience: 50
         }
       }
-      return UserValues
+      return UserValues;
     }
 
     window.onload = function(){
-      UserValues = getUserIn()
+      UserValues = getUserIn();
+
+      
+      document.getElementById("level").innerHTML = UserValues.level;
+      document.getElementById("fightpower").innerHTML = UserValues.fightpower;
+      document.getElementById("money").innerHTML = UserValues.money;
+      document.getElementById("horse").innerHTML = UserValues.horse;
+      document.getElementById("health").innerHTML = UserValues.health;
+      document.getElementById("food").innerHTML = UserValues.food;
+      document.getElementById("experiences").innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+      
 
       var canvas = document.getElementById("myCanvas");
       var context = canvas.getContext("2d");
 
-      var castle=document.getElementById("castle");
-      context.drawImage(castle, 100, 50);
+      if (UserValues.level < 3){
+        var villagerhouse = document.getElementById("villageimage");
+        context.drawImage(villagerhouse, 100, 200, 300, 300);
+      } else if (UserValues.level < 5){
+        var bursahouse = document.getElementById("houseimage");
+        context.drawImage(bursahouse, 100, 50);
+      } else {
+        var castle=document.getElementById("castleimage");
+        context.drawImage(castle, 100, 50);
+      }
 
-      var horse = document.getElementById("horse");
+      var horse = document.getElementById("horseimage");
       for (let i = 0; i < 4; i++) {
         if (i == 0){
           context.drawImage(horse, 1200, 350, 180,180);
@@ -164,10 +183,10 @@
         }
       }
 
-      var ottomanboy = document.getElementById("ottomanboy");
-      context.drawImage(ottomanboy, 100, 300, 180, 180);
+      var ottomanboy = document.getElementById("ottomanboyimage");
+      context.drawImage(ottomanboy, 100, 350, 180, 180);
     }
-  
+
   </script>
   </body>
 </html>

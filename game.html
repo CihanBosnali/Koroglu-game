@@ -506,12 +506,16 @@
               alert("Bu aksiyonu gerçekleştirecek kadar sağlıklı değilsiniz!");
             } else {
               Silah -= 5;
-              Can -= Math.floor(Math.random() * 6) + 1; ;
+              Can -= Math.floor(Math.random() * 6) + 1;
               Para += kazanc
               document.getElementById('demo2').innerHTML = 'Kazandığın para : ' + kazanc + ' altın.'
-      duzeltme() 
+              duzeltme()
+            }
+          }
+        }
+      }
     }
-
+    
     function duzeltme() {
       UserValues.food = Yemek
       UserValues.health = Can

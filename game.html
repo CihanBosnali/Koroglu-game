@@ -357,7 +357,9 @@
       }
       document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' At sayın: ' + At 
       duzeltme()      
-    }function Yemekalis() {
+    }
+    
+    function Yemekalis() {
       if (Para < 2) {
               alert('Yeterli paran yok!')
       }else{
@@ -366,7 +368,10 @@
       }
       document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Yemek sayın: ' + Yemek
       duzeltme()     
-    }function Silahalis() {
+    }
+    
+    
+    function Silahalis() {
       if (Para < 4) {
           alert('Yeterli paran yok!')
       }else{
@@ -375,7 +380,9 @@
       }
       document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Silah sayın: ' + Silah
       duzeltme()    
-    }function Ilacalis() {
+    }
+    
+    function Ilacalis() {
       if (Para < 3) {
           alert('Yeterli paran yok!')
       }else if (Can == 100){
@@ -387,7 +394,9 @@
       }
       document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Canın: ' + Can
       duzeltme()     
-    }function duzeltme() {
+    }
+    
+    function duzeltme() {
       UserValues.food = Yemek
       UserValues.health = Can
       UserValues.fightpower = Silah

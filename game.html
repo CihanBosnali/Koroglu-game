@@ -449,11 +449,19 @@
         if (UserValues.horse_experience < 20){
           alert("En az 20 yetiştirici deneyimine ihtiyacın var.");
         } else {
-          Silah += 5;
-          Yemek -= 2;
-          Para -= 1;
-          document.getElementById('demo2').innerHTML = 'Savaş Gücü: ' + Silah + ' Yemek: ' + Yemek + ' Para: ' + Para;
-          duzeltme()
+          if (Yemek < 3){
+            alert("Yetersiz Yemek");
+          } else {
+            if (Para < 2){
+              alert("Yetersiz Para");
+            } else {
+              Silah += 5;
+              Yemek -= 2;
+              Para -= 1;
+              document.getElementById('demo2').innerHTML = 'Savaş Gücü: ' + Silah + ' Yemek: ' + Yemek + ' Para: ' + Para;
+              duzeltme()
+            }
+          }
         }
       }
     }
@@ -478,7 +486,6 @@
               duzeltme()
             }
           }
-          
         }
       }
     }

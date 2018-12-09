@@ -214,7 +214,7 @@
         <span class = "close" id="aksiyonlarclose">&times;</span>
         <h1>Aksiyonlar</h1>
 
-        <button type="button" onclick = "AtYetistirme() "> At Yetiştir </button>
+        <button type="button" onclick = "AtYetistirme()"> At Yetiştir </button>
        
         <button type="button" onclick = "KıratImprove()"> Kır Atı Geliştir </button>
 
@@ -254,7 +254,6 @@
     aksiyonlarspan.onclick = function() {
       aksiyonlarmodal.style.display = "none";
     }
-
 
     function getUserIn(){
       if(window.location.search.split("=")[0] == "?passed"){
@@ -430,6 +429,30 @@
       duzeltme()     
     }
     
+    function AtYetistirme() {
+
+    }
+
+    function KıratImprove() {
+      if (level < 2){
+        alert("Level 2'de Açılır")
+      } else {
+        if (horse_experience < 20){
+          alert("En az 20 yetiştirici deneyimine ihtiyacın var.")
+        } else {
+          
+        }
+      }
+    }
+
+    function BattleToBolu() {
+
+    }
+
+    function RobberyforKervan() {
+
+    }
+
     function duzeltme() {
       UserValues.food = Yemek
       UserValues.health = Can

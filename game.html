@@ -112,8 +112,11 @@
   <canvas id="myCanvas" width="1400" height="600">
     <img src="images/oca.png" id="villageimage">
     <img src="images/castle.png" id="castleimage">
-    <img src="images/horse.png" id="horseimage" width="100px">
+    <img src="images/horse.png" id="horseimage">
     <img src="images/ottomany.png" id="ottomanboyimage">
+    <img src="images/old-house-clipart-1.png" id="houseimage">
+    <img src="images/Market.png" id="marketimage">
+    <img src="images/DedeKorkut.png" id="dedekorkutimage">
   </canvas>
 
   <script>
@@ -168,7 +171,7 @@
         context.drawImage(villagerhouse, 100, 200, 300, 300);
       } else if (UserValues.level < 5){
         var bursahouse = document.getElementById("houseimage");
-        context.drawImage(bursahouse, 100, 50);
+        context.drawImage(bursahouse, 250, 170, 250, 200);
       } else {
         var castle=document.getElementById("castleimage");
         context.drawImage(castle, 100, 50);
@@ -185,6 +188,12 @@
 
       var ottomanboy = document.getElementById("ottomanboyimage");
       context.drawImage(ottomanboy, 100, 350, 180, 180);
+
+      var market = document.getElementById("dedekorkutimage");
+      context.drawImage(market, 0, 0, 100, 100);
+      
+      var market = document.getElementById("marketimage");
+      context.drawImage(market, 0, 120, 100, 100);
     }
 
   </script>

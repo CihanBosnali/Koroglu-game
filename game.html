@@ -163,15 +163,22 @@
 
     <!-- Modal content -->
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <p>Some text in the Modal..</p>
+      <span class="close" id="dedekorkutclose">&times;</span>
+      <p>Deneyim Kazanmak için Soruları Doğru Cevaplamalısın!</p>
+      <br>
+      <p id="soru">Bu soru metnidir!</p>
+      <button id="A" onclick="answered('A')">A: Cevap A mı?</button>
+      <button id="B" onclick="answered('B')">B: Cevap B mi?</button>
+      <button id="C" onclick="answered('C')">C: Cevap C mi?</button>
+      <button id="D" onclick="answered('D')">D: Cevap D mi?</button>
+
     </div>
   
   </div>
   
   <div id='pazaryerimodal' class = 'modal'>
     <div class="modal-content">
-        <span class = "close">&times;</span>
+        <span class = "close" id="pazaryericlose">&times;</span>
         <h1>Pazar Yeri</h1>
 
         <button type="button"
@@ -203,14 +210,22 @@
 </div>
 
   <script>
+    var questionID = 0;
     var UserValues = new Object;
 
     var dedekorkutmodal = document.getElementById('dedekorkutModal');
-    var span = document.getElementsByClassName("close")[0];
+    var dedekorkutspan = document.getElementById("dedekorkutclose");
 
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
+    var pazaryerimodal = document.getElementById('pazaryerimodal');
+    var pazaryerispan = document.getElementById('pazaryericlose');
+
+
+    dedekorkutspan.onclick = function() {
       dedekorkutmodal.style.display = "none";
+    }
+
+    pazaryerispan.onclick = function() {
+      pazaryerimodal.style.display = "none";
     }
 
 
@@ -320,10 +335,9 @@
       } else if (x < 100 && y < 220 && y > 120){
         pazaryerimodal.style.display = "block";
         Para = UserValues.money
-        At = 10
-        Yemek = 0
-        Silah = 0
-        Ilac = 0
+        At = UserValues.horse
+        Yemek = UserValues.food
+        Silah = UserValues.fightpower
         Can = UserValues.health
 
       } else if (x < 100 && y < 340 && y > 240){
@@ -374,6 +388,13 @@
 
     }
     
+    function answered(answer){
+      if (answer == asnwersArray[questionID]) {
+        alert("CORRECT")
+      } else {
+        alert("WRONG")
+      }
+    }
   </script>
   </body>
 </html>

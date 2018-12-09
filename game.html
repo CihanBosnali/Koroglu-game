@@ -353,7 +353,6 @@
     var Yemek;
     var At;
     var Silah;
-    var Ilac;
     var Can;
     
     function clickOnButton(canvas, x, y) {
@@ -442,7 +441,7 @@
     }
 
     function KiratImprove() {
-      if (level < 2){
+      if (UserValues.level < 2){
         alert("Level 2'de Açılır");
       } else {
         if (UserValues.horse_experience < 20){
@@ -466,7 +465,7 @@
     }
 
     function BattleToBolu() {
-      if (level < 4){
+      if (UserValues.level < 4){
         alert("Level 4'de Açılır");
       } else {
         if (UserValues.war_experience < 20){
@@ -493,7 +492,7 @@
       paraaraligi = [1 , 2 , 3 , 4]
       var kazanc = paraaraligi[Math.floor(Math.random()*paraaraligi.length)];
 
-      if (level < 5){
+      if (UserValues.level < 5){
         alert("Level 5'de Açılır");
       } else {
         if (UserValues.war_experience < 35){

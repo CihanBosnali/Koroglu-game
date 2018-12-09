@@ -220,7 +220,7 @@
 
         <button type="button1" onclick = "BattleToBolu()"> Bolu ile Savaş </button>
 
-        <button type="button1" onclick = "BattleToBolu()"> Kervan Soy </button>
+        <button type="button1" onclick = "RobberyforKervan()"> Kervan Soy </button>
 
         <p id="demo"></p>
 
@@ -240,6 +240,8 @@
     var pazaryerimodal = document.getElementById('pazaryerimodal');
     var pazaryerispan = document.getElementById('pazaryericlose');
 
+    var aksiyonlarmodal = document.getElementById('aksiyonlarmodal');
+    var aksiyonlarspan = document.getElementById('aksiyonlarclose');
 
     dedekorkutspan.onclick = function() {
       dedekorkutmodal.style.display = "none";
@@ -362,7 +364,7 @@
         Can = UserValues.health
 
       } else if (x < 100 && y < 340 && y > 240){
-        alert("Aksiyonlara git")
+        aksiyonlarmodal.style.display = "block";
       } else if (x > 1300 && y < 100){
         alert("Görevleri aç")
       }
@@ -438,7 +440,7 @@
     }
     
     function answered(answer){
-      if (answer == asnwersArray[questionID]) {
+      if (answer == answersArray[questionID]) {
         alert("CORRECT")
       } else {
         alert("WRONG")

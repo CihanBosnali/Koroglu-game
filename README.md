@@ -6,7 +6,7 @@ Students who Created The Project:
 * **Cihan Alperen Bosnalı** - [CihanBosnali](https://github.com/CihanBosnali)
 * **Soykut Necati Köse** - [Melionikov](https://github.com/Melionikov)
 
-Advisers of The Project:
+Advisors of The Project:
 * **Mr. Haktanır** - Teacher of Turkish Language and Literature @ [SEV American College](https://www.sevkoleji.k12.tr/en/)
 * **Ms. Çınar** - Teacher of Turkish Language and Literature @ [SEV American College](https://www.sevkoleji.k12.tr/en/)
 

@@ -493,8 +493,22 @@
     function RobberyforKervan() {
       paraaraligi = [1 , 2 , 3 , 4]
       var kazanc = paraaraligi[Math.floor(Math.random()*paraaraligi.length)];
-      document.getElementById('demo2').innerHTML = 'Kazandığın para : ' + kazanc + ' altın.'
-      Para + kazanc == Para
+      if (level < 5){
+        alert("Level 5'de Açılır");
+      } else {
+        if (UserValues.war_experience < 35){
+          alert("En az 35 savaşçı deneyimine ihtiyacın var.");
+        } else {
+          if (Silah < 10){
+            alert("Silahın yok. Adamlar topla tüfekle geliyor. Taş mı atacaksın?!?");
+          } else {
+            if (Can < 6){
+              alert("Bu aksiyonu gerçekleştirecek kadar sağlıklı değilsiniz!");
+            } else {
+              Silah -= 5;
+              Can -= Math.floor(Math.random() * 6) + 1; ;
+              Para += kazanc
+              document.getElementById('demo2').innerHTML = 'Kazandığın para : ' + kazanc + ' altın.'
       duzeltme() 
     }
 

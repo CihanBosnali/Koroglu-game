@@ -114,7 +114,7 @@
   <canvas id="myCanvas" width="1400" height="600" style="border:2px solid">
     <img src="images/castle.png" id="castle">
     <img src="images/horse.png" id="horse" width="100px">
-  
+    <img src="images/ottomany.png" id="ottomanboy">
   </canvas>
 
 
@@ -129,11 +129,14 @@
       var horse = document.getElementById("horse");
       for (let i = 0; i < 4; i++) {
         if (i == 0){
-          context.drawImage(horse, 100, 300)
+          context.drawImage(horse, 500, 350, 180,180);
         } else {
-          context.drawImage(horse, 100 + 300*i, 200 + (50*i))
+          context.drawImage(horse, 500 + 200*i, 250 + (50*i), 180,180);
         }
       }
+
+      var ottomanboy = document.getElementById("ottomanboy");
+      context.drawImage(ottomanboy, 100, 300, 180, 180);
     }
   
   </script>

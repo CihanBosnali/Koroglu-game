@@ -349,13 +349,14 @@
     }
 
     function Atsatis() {
-      if (At <= 0) {
+      if (At < 0) {
           alert('Atın kalmadı!')
       }else{
           Para += 4
           At -= 1
       }
       document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' At sayın: ' + At 
+      duzeltme()      
     }function Yemekalis() {
       if (Para < 2) {
               alert('Yeterli paran yok!')
@@ -364,6 +365,7 @@
           Yemek += 1
       }
       document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Yemek sayın: ' + Yemek
+      duzeltme()     
     }function Silahalis() {
       if (Para < 4) {
           alert('Yeterli paran yok!')
@@ -372,6 +374,7 @@
           Silah += 1
       }
       document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Silah sayın: ' + Silah
+      duzeltme()    
     }function Ilacalis() {
       if (Para < 3) {
           alert('Yeterli paran yok!')
@@ -379,13 +382,20 @@
           alert('Canın tam!')
       }else{
           Para -= 3
-          Ilac += 1
           Can += 10
-          UserValues.health = Can
           document.getElementById('demo').innerHTML = 'Canın 10 kadar arttı!!'                        
       }
       document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Canın: ' + Can
-
+      duzeltme()     
+    }function duzeltme() {
+      UserValues.health = Can
+      UserValues.fightpower = Silah
+      UserValues.horse = At
+      UserValues.money = Para
+      document.getElementById('health').innerHTML = UserValues.health
+      document.getElementById('fightpower').innerHTML = UserValues.fightpower
+      document.getElementById('money').innerHTML = UserValues.money
+      document.getElementById('horse').innerHTML = UserValues.horse
     }
     
     function answered(answer){

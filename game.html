@@ -164,13 +164,20 @@
     <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
-      <p>Some text in the Modal..</p>
+      <p>Deneyim Kazanmak için Soruları Doğru Cevaplamalısın!</p>
+      <br>
+      <p id="soru">Bu soru metnidir!</p>
+      <button id="A" onclick="answered('A')">A: Cevap A mı?</button>
+      <button id="B" onclick="answered('B')">B: Cevap B mi?</button>
+      <button id="C" onclick="answered('C')">C: Cevap C mi?</button>
+      <button id="D" onclick="answered('D')">D: Cevap D mi?</button>
     </div>
   
   </div>
   
 
   <script>
+    var questionID = 0;
 
     var dedekorkutmodal = document.getElementById('dedekorkutModal');
     var span = document.getElementsByClassName("close")[0];
@@ -216,11 +223,11 @@
       if (x < 100 && y < 100){
         dedekorkutmodal.style.display = "block";
       } else if (x < 100 && y < 220 && y > 120){
-        alert("Pazar yerine git")
+        alert("Pazar yerine git");
       } else if (x < 100 && y < 340 && y > 240){
-        alert("Aksiyonlara git")
+        alert("Aksiyonlara git");
       } else if (x > 1300 && y < 100){
-        alert("Görevleri aç")
+        alert("Görevleri aç");
       }
       
     }
@@ -287,6 +294,13 @@
     }, false);
     }
 
+    function answered(answer){
+      if (answer == asnwersArray[questionID]) {
+        alert("CORRECT")
+      } else {
+        alert("WRONG")
+      }
+    }
 
     
   </script>

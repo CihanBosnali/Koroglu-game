@@ -207,7 +207,28 @@
 
         </script>
     </div>
-</div>
+  </div>
+  <div id='aksiyonlarmodal' class = 'modal'>
+    <div class="modal-content">
+        <span class = "close" id="aksiyonlarclose">&times;</span>
+        <h1>Aksiyonlar</h1>
+
+        <button type="button" onclick = "AtYetistirme() "> At Yetiştir </button>
+       
+        <button type="button" onclick = "KıratImprove()"> Kır Atı Geliştir </button>
+
+        <button type="button1" onclick = "BattleToBolu()"> Bolu ile Savaş </button>
+
+
+        <button type="button" onclick = "Ilacalis()">  </button>
+
+        <p id="demo"></p>
+
+        <script type="text/javascript">
+
+        </script>
+    </div>
+  </div>
 
   <script>
     var questionID = 0;
@@ -352,11 +373,15 @@
       if (At == 0) {
           alert('Atın kalmadı!')
       }else{
+        if (UserValues.market_experience > 10){
           Para += 5
           At -= 1
+          document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' At sayın: ' + At 
+          duzeltme()      
+        } else {
+          document.getElementById('demo').innerHTML = "At Satacak kadar deneyimli değilsin! En az 10 deneyim kazan."
+        }
       }
-      document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' At sayın: ' + At 
-      duzeltme()      
     }
     
     function Yemekalis() {
@@ -369,7 +394,6 @@
       document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Yemek sayın: ' + Yemek
       duzeltme()     
     }
-    
     
     function Silahalis() {
       if (Para < 4) {
@@ -388,9 +412,13 @@
       }else if (Can == 100){
           alert('Canın tam!')
       }else{
+        if (UserValues.market_experience > 20){
           Para -= 3
           Can += 10
-          document.getElementById('demo').innerHTML = 'Canın 10 kadar arttı!!'                        
+          document.getElementById('demo').innerHTML = 'Canın 10 kadar arttı!!'   
+        } else {
+          document.getElementById('demo').innerHTML = 'Aktar ile anlaşıcak kadar deneyimli değilsin! En az 20 deneyim kazan.'   
+        }                     
       }
       document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Canın: ' + Can
       duzeltme()     

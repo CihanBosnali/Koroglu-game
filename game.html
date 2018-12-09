@@ -164,20 +164,95 @@
     <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
-      <p>Deneyim Kazanmak için Soruları Doğru Cevaplamalısın!</p>
-      <br>
-      <p id="soru">Bu soru metnidir!</p>
-      <button id="A" onclick="answered('A')">A: Cevap A mı?</button>
-      <button id="B" onclick="answered('B')">B: Cevap B mi?</button>
-      <button id="C" onclick="answered('C')">C: Cevap C mi?</button>
-      <button id="D" onclick="answered('D')">D: Cevap D mi?</button>
+      <p>Some text in the Modal..</p>
     </div>
   
   </div>
   
+  <div id='pazaryerimodal' class = 'modal'>
+    <div>
+        <span class = "close">&times;</span>
+        <h1>Pazar Yeri</h1>
+
+        <button type="button"
+        onclick = "Atsatis() "> 
+        At sat </button>
+
+        <button type="button1"
+        onclick = "Yemekalis()"> 
+        Yemek Al </button>
+
+        <button type="button"
+        onclick = "document.getElementById('demo').innerHTML = At "> 
+        At sayısı </button>
+
+        <button type="button"
+        onclick = "Silahalis()"> 
+        Silah Al </button>
+
+        <button type="button"
+        onclick = "Ilacalis()"> 
+        İlaç Al </button>
+
+        <p id="demo"></p>
+
+        <script type="text/javascript">
+            var Para;
+            Para = UserValues.money
+            var At;
+            At = 10
+            var Yemek;
+            Yemek = 0
+            var Silah;
+            Silah = 0
+            var Ilac;
+            Ilac = 0
+            var Can;
+            Can = UserValues.health
+         function Atsatis() {
+            if (At <= 0) {
+                alert('Atın kalmadı!')
+            }else{
+                Para += 4
+                At -= 1
+            }
+            document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' At sayın: ' + At 
+         }function Yemekalis() {
+            if (Para < 2) {
+                    alert('Yeterli paran yok!')
+            }else{
+                Para -= 2
+                Yemek += 1
+            }
+            document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Yemek sayın: ' + Yemek
+         }function Silahalis() {
+            if (Para < 4) {
+                alert('Yeterli paran yok!')
+            }else{
+                Para -= 4
+                Silah += 1
+            }
+            document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Silah sayın: ' + Silah
+         }function Ilacalis() {
+            if (Para < 3) {
+                alert('Yeterli paran yok!')
+            }else if (Can == 100){
+                alert('Canın tam!')
+            }else{
+                Para -= 3
+                Ilac += 1
+                Can += 10
+                UserValues.health = Can
+                document.getElementById('demo').innerHTML = 'Canın 10 kadar arttı!!'                        
+            }
+            document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Canın: ' + Can
+ 
+        }
+        </script>
+    </div>
+</div>
 
   <script>
-    var questionID = 0;
 
     var dedekorkutmodal = document.getElementById('dedekorkutModal');
     var span = document.getElementsByClassName("close")[0];
@@ -223,11 +298,11 @@
       if (x < 100 && y < 100){
         dedekorkutmodal.style.display = "block";
       } else if (x < 100 && y < 220 && y > 120){
-        alert("Pazar yerine git");
+        alert("Pazar yerine git")
       } else if (x < 100 && y < 340 && y > 240){
-        alert("Aksiyonlara git");
+        alert("Aksiyonlara git")
       } else if (x > 1300 && y < 100){
-        alert("Görevleri aç");
+        alert("Görevleri aç")
       }
       
     }
@@ -294,13 +369,6 @@
     }, false);
     }
 
-    function answered(answer){
-      if (answer == asnwersArray[questionID]) {
-        alert("CORRECT")
-      } else {
-        alert("WRONG")
-      }
-    }
 
     
   </script>

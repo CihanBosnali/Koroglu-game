@@ -18,10 +18,12 @@ Köroğlu is a fictional hero whih is the main character of the Turkish folk sto
   
 ### Prerequisites
   Project is created using web technologies HTML, CSS and Javascript and don't have any additional prerequisites.
+  
   ```No Prerequisites```
   
 ### Installing
   Clone the repository
+  
   ```git clone https://github.com/CihanBosnali/koroglu-game.git```
   
 ## Deployment

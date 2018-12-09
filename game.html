@@ -197,62 +197,13 @@
         <p id="demo"></p>
 
         <script type="text/javascript">
-            var Para;
-            Para = UserValues.money
-            var At;
-            At = 10
-            var Yemek;
-            Yemek = 0
-            var Silah;
-            Silah = 0
-            var Ilac;
-            Ilac = 0
-            var Can;
-            Can = UserValues.health
-         function Atsatis() {
-            if (At <= 0) {
-                alert('Atın kalmadı!')
-            }else{
-                Para += 4
-                At -= 1
-            }
-            document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' At sayın: ' + At 
-         }function Yemekalis() {
-            if (Para < 2) {
-                    alert('Yeterli paran yok!')
-            }else{
-                Para -= 2
-                Yemek += 1
-            }
-            document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Yemek sayın: ' + Yemek
-         }function Silahalis() {
-            if (Para < 4) {
-                alert('Yeterli paran yok!')
-            }else{
-                Para -= 4
-                Silah += 1
-            }
-            document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Silah sayın: ' + Silah
-         }function Ilacalis() {
-            if (Para < 3) {
-                alert('Yeterli paran yok!')
-            }else if (Can == 100){
-                alert('Canın tam!')
-            }else{
-                Para -= 3
-                Ilac += 1
-                Can += 10
-                UserValues.health = Can
-                document.getElementById('demo').innerHTML = 'Canın 10 kadar arttı!!'                        
-            }
-            document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Canın: ' + Can
- 
-        }
+
         </script>
     </div>
 </div>
 
   <script>
+    var UserValues = new Object;
 
     var dedekorkutmodal = document.getElementById('dedekorkutModal');
     var span = document.getElementsByClassName("close")[0];
@@ -264,7 +215,6 @@
 
 
     function getUserIn(){
-      var UserValues = new Object;
       if(window.location.search.split("=")[0] == "?passed"){
         UserValues = {
           level: Number(window.location.search.split("=")[1][1]),
@@ -293,19 +243,6 @@
       return UserValues;
     }
 
-    function clickOnButton(canvas, x, y) {
-      var context = canvas.getContext('2d');
-      if (x < 100 && y < 100){
-        dedekorkutmodal.style.display = "block";
-      } else if (x < 100 && y < 220 && y > 120){
-        pazaryerimodal.style.display = "block";
-      } else if (x < 100 && y < 340 && y > 240){
-        alert("Aksiyonlara git")
-      } else if (x > 1300 && y < 100){
-        alert("Görevleri aç")
-      }
-      
-    }
     function getMousePos(canvas, evt) {
       var rect = canvas.getBoundingClientRect();
       return {
@@ -369,7 +306,73 @@
     }, false);
     }
 
+    var Para;
+    var Yemek;
+    var At;
+    var Silah;
+    var Ilac;
+    var Can;
+    
+    function clickOnButton(canvas, x, y) {
+      var context = canvas.getContext('2d');
+      if (x < 100 && y < 100){
+        dedekorkutmodal.style.display = "block";
+      } else if (x < 100 && y < 220 && y > 120){
+        pazaryerimodal.style.display = "block";
+        Para = UserValues.money
+        At = 10
+        Yemek = 0
+        Silah = 0
+        Ilac = 0
+        Can = UserValues.health
 
+      } else if (x < 100 && y < 340 && y > 240){
+        alert("Aksiyonlara git")
+      } else if (x > 1300 && y < 100){
+        alert("Görevleri aç")
+      }
+      
+    }
+
+    function Atsatis() {
+      if (At <= 0) {
+          alert('Atın kalmadı!')
+      }else{
+          Para += 4
+          At -= 1
+      }
+      document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' At sayın: ' + At 
+    }function Yemekalis() {
+      if (Para < 2) {
+              alert('Yeterli paran yok!')
+      }else{
+          Para -= 2
+          Yemek += 1
+      }
+      document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Yemek sayın: ' + Yemek
+    }function Silahalis() {
+      if (Para < 4) {
+          alert('Yeterli paran yok!')
+      }else{
+          Para -= 4
+          Silah += 1
+      }
+      document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Silah sayın: ' + Silah
+    }function Ilacalis() {
+      if (Para < 3) {
+          alert('Yeterli paran yok!')
+      }else if (Can == 100){
+          alert('Canın tam!')
+      }else{
+          Para -= 3
+          Ilac += 1
+          Can += 10
+          UserValues.health = Can
+          document.getElementById('demo').innerHTML = 'Canın 10 kadar arttı!!'                        
+      }
+      document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Canın: ' + Can
+
+    }
     
   </script>
   </body>

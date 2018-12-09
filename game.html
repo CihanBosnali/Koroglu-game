@@ -388,6 +388,7 @@
       document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Canın: ' + Can
       duzeltme()     
     }function duzeltme() {
+      UserValues.food = Yemek
       UserValues.health = Can
       UserValues.fightpower = Silah
       UserValues.horse = At
@@ -396,6 +397,7 @@
       document.getElementById('fightpower').innerHTML = UserValues.fightpower
       document.getElementById('money').innerHTML = UserValues.money
       document.getElementById('horse').innerHTML = UserValues.horse
+      document.getElementById('food').innerHTML = UserValues.food
     }
     
     function answered(answer){

@@ -393,12 +393,12 @@
     
     function Yemekalis() {
       if (Para < 2) {
-              alert('Yeterli paran yok!')
+        alert('Yeterli paran yok!');
       }else{
-          Para -= 2
-          Yemek += 1
+          Para -= 2;
+          Yemek += 1;
       }
-      document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Yemek sayın: ' + Yemek
+      document.getElementById('demo').innerHTML = 'Paran: ' + Para + ' Yemek sayın: ' + Yemek;
       duzeltme()     
     }
     
@@ -432,18 +432,22 @@
     }
     
     function AtYetistirme() {
-      Yemek -= 1
-      At += 1
+      Yemek -= 2;
+      At += 1;
+      document.getElementById('demo').innerHTML = 'Yemek: ' + Yemek + ' At sayın: ' + At;
+      duzeltme()
     }
 
     function KıratImprove() {
       if (level < 2){
-        alert("Level 2'de Açılır")
+        alert("Level 2'de Açılır");
       } else {
         if (horse_experience < 20){
-          alert("En az 20 yetiştirici deneyimine ihtiyacın var.")
+          alert("En az 20 yetiştirici deneyimine ihtiyacın var.");
         } else {
-          
+          Silah += 5;
+          Yemek -= 2;
+          Para -= 1;
         }
       }
     }

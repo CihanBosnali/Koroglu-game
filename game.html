@@ -39,7 +39,6 @@
       font-size: 45px;
     }
 
-
     .container{
       text-align: center;
       background-color: #fff;
@@ -110,16 +109,46 @@
     </li>
   </ul>
 
-
   <canvas id="myCanvas" width="1400" height="600">
     <img src="images/castle.png" id="castle">
     <img src="images/horse.png" id="horse" width="100px">
     <img src="images/ottomany.png" id="ottomanboy">
   </canvas>
 
-
   <script>
+    function getUserIn(){
+      var UserValues = new Object;
+      if(window.location.search.split("=")[0] == "?passed"){
+        UserValues = {
+          level: Number(window.location.search.split("=")[1][1]),
+          fightpower: Number(window.location.search.split("=")[1][3] + window.location.search.split("=")[1][4]),
+          money: Number(window.location.search.split("=")[1][6] + window.location.search.split("=")[1][7]),
+          horse: Number(window.location.search.split("=")[1][9] + window.location.search.split("=")[1][10]),
+          health: Number(window.location.search.split("=")[1][13] + window.location.search.split("=")[1][14]),
+          food: Number(window.location.search.split("=")[1][17] + window.location.search.split("=")[1][18]),
+          market_experience: Number(window.location.search.split("=")[1][20] + window.location.search.split("=")[1][21]),
+          war_experience: Number(window.location.search.split("=")[1][24] + window.location.search.split("=")[1][25]),
+          horse_experience: Number(window.location.search.split("=")[1][28] + window.location.search.split("=")[1][29])
+        }
+      } else if (window.location.search.split("=")[0] == "?newuser"){
+        UserValues = {
+          level: 1,
+          fightpower: 10,
+          money: 15,
+          horse: 1,
+          health: 100,
+          food: 20,
+          market_experience: 1,
+          war_experience: 1,
+          horse_experience: 50
+        }
+      }
+      return UserValues
+    }
+
     window.onload = function(){
+      UserValues = getUserIn()
+
       var canvas = document.getElementById("myCanvas");
       var context = canvas.getContext("2d");
 
@@ -129,7 +158,7 @@
       var horse = document.getElementById("horse");
       for (let i = 0; i < 4; i++) {
         if (i == 0){
-          context.drawImage(horse, 500, 350, 180,180);
+          context.drawImage(horse, 1200, 350, 180,180);
         } else {
           context.drawImage(horse, 500 + 200*i, 250 + (50*i), 180,180);
         }

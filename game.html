@@ -117,6 +117,8 @@
     <img src="images/old-house-clipart-1.png" id="houseimage">
     <img src="images/market.png" id="marketimage">
     <img src="images/DedeKorkut.png" id="dedekorkutimage">
+    <img src="images/aksiyonlar.png" id="aksiyonlarimage">
+    <img src="images/to-do.png" id="todoimage">
   </canvas>
 
   <script>
@@ -150,10 +152,29 @@
       return UserValues;
     }
 
+    function clickOnButton(canvas, x, y) {
+      var context = canvas.getContext('2d');
+      if (x < 100 && y < 100){
+        alert("Dede Korkut'a git")
+      } else if (x < 100 && y < 220 && y > 120){
+        alert("Pazar yerine git")
+      } else if (x < 100 && y < 340 && y > 240){
+        alert("Aksiyonlara git")
+      } else if (x > 1300 && y < 100){
+        alert("Görevleri aç")
+      }
+      
+    }
+    function getMousePos(canvas, evt) {
+      var rect = canvas.getBoundingClientRect();
+      return {
+        x: evt.clientX - rect.left,
+        y: evt.clientY - rect.top
+      };
+    }
+
     window.onload = function(){
       UserValues = getUserIn();
-
-      
       document.getElementById("level").innerHTML = UserValues.level;
       document.getElementById("fightpower").innerHTML = UserValues.fightpower;
       document.getElementById("money").innerHTML = UserValues.money;
@@ -189,13 +210,26 @@
       var ottomanboy = document.getElementById("ottomanboyimage");
       context.drawImage(ottomanboy, 100, 350, 180, 180);
 
-      var market = document.getElementById("dedekorkutimage");
-      context.drawImage(market, 0, 0, 100, 100);
+      var dedekorkut = document.getElementById("dedekorkutimage");
+      context.drawImage(dedekorkut, 0, 0, 100, 100);
       
       var market = document.getElementById("marketimage");
       context.drawImage(market, 0, 120, 100, 100);
+
+      var aksiyonlar = document.getElementById("aksiyonlarimage");
+      context.drawImage(aksiyonlar, 0, 240, 100, 100);
+
+      var todolist = document.getElementById("todoimage");
+      context.drawImage(todolist, 1300, 0, 100, 100);
+
+      canvas.addEventListener('click', function(evt) {
+      var mousePos = getMousePos(canvas, evt);
+      clickOnButton(canvas, mousePos.x, mousePos.y);
+    }, false);
     }
 
+
+    
   </script>
   </body>
 </html>

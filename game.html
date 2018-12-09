@@ -358,16 +358,15 @@
     
     function clickOnButton(canvas, x, y) {
       var context = canvas.getContext('2d');
+      Para = UserValues.money
+      At = UserValues.horse
+      Yemek = UserValues.food
+      Silah = UserValues.fightpower
+      Can = UserValues.health
       if (x < 100 && y < 100){
         dedekorkutmodal.style.display = "block";
       } else if (x < 100 && y < 220 && y > 120){
         pazaryerimodal.style.display = "block";
-        Para = UserValues.money
-        At = UserValues.horse
-        Yemek = UserValues.food
-        Silah = UserValues.fightpower
-        Can = UserValues.health
-
       } else if (x < 100 && y < 340 && y > 240){
         aksiyonlarmodal.style.display = "block";
       } else if (x > 1300 && y < 100){
@@ -493,6 +492,7 @@
     function RobberyforKervan() {
       paraaraligi = [1 , 2 , 3 , 4]
       var kazanc = paraaraligi[Math.floor(Math.random()*paraaraligi.length)];
+
       if (level < 5){
         alert("Level 5'de Açılır");
       } else {
@@ -515,7 +515,7 @@
         }
       }
     }
-    
+
     function duzeltme() {
       UserValues.food = Yemek
       UserValues.health = Can

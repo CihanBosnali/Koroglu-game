@@ -229,6 +229,43 @@
         </script>
     </div>
   </div>
+    <div id='gorevlermodal' class = 'modal'>
+      <div class="modal-content">
+          <span class = "close" id="gorevlerclose">&times;</span>
+          <h1>Gorevler</h1>
+  
+          <br><button type="button" onclick = "gorev_ara()"> Görev-1: Ekmek Almaya Giderken Yolun Kesilip Ekmeklerin Çalındı. </button></br>
+    
+          <br><button type="button" onclick = "gorev_ara()"> Görev-2: Ekmeklerin Çalınmasından Sıkılıp Çivili Sopa Hazırla. </button></br>
+  
+          <br><button type="button1" onclick = "gorev_1()"> Görev-3: Babanı Gururlandır!! </button></br>
+  
+          <br><button type="button1" onclick = "gorev_ara()"> Görev-4: Kır Atı Bolu Beyinden Iste. </button></br>
+  
+          <br><button type="button1" onclick = "gorev_2()"> Görev-5: Kır Atı Eğit. </button></br>
+
+          <br><button type="button1" onclick = "gorev_3()"> Görev-6: Babanla Birlikte Bolu'dan Kaç. </button></br>
+          
+          <br><button type="button1" onclick = "gorev_ara()"> Görev-7: Köpükleri Babana Götür. </button></br>
+
+          <br><button type="button1" onclick = "gorev_4()"> Görev-8: Telli Nigar'ı kaçır. </button></br>
+
+          <br><button type="button1" onclick = "gorev_5()"> Görev-9: Çamlıbel'e Git ve Köse Kenan'ın Adamlarına Kafa Tut </button></br>
+
+          <br><button type="button1" onclick = "gorev_6()"> Görev-10: Ilk Kervanını Soymaya Giriş </button></br>
+
+          <br><button type="button1" onclick = "gorev_7()"> Görev-11: Ilk Birkaç Denemede Başarısız Olduktan Sonra Yenilmezi Yen! </button></br>
+
+          <br><button type="button1" onclick = "gorev_8()"> Görev-12: 40 Gün 40 Gece Düğün. </button></br>
+
+
+          <p id="demo2"></p>
+  
+          <script type="text/javascript">
+            //ADDED
+          </script>
+      </div> 
+    </div>
 
   <script>
     sorular = ["Bolu Beyinin hangi milletle arası iyi değildir?",
@@ -303,6 +340,9 @@
     var aksiyonlarmodal = document.getElementById('aksiyonlarmodal');
     var aksiyonlarspan = document.getElementById('aksiyonlarclose');
 
+    var gorevlermodal = document.getElementById('gorevlermodal'); // ADDED
+    var gorevlerspan = document.getElementById('gorevlerclose'); // ADDED    
+    
     function askNewQues(){
       questionID = Math.floor(Math.random()*sorular.length);
       console.log(questionID);
@@ -327,6 +367,10 @@
     aksiyonlarspan.onclick = function() {
       aksiyonlarmodal.style.display = "none";
     }
+    
+    gorevlerspan.onclick = function() {
+      gorevlermodal.style.display = "none";
+    }    
 
     function getUserIn(){
       if(window.location.search.split("=")[0] == "?passed"){
@@ -441,7 +485,7 @@
       } else if (x < 100 && y < 340 && y > 240){
         aksiyonlarmodal.style.display = "block";
       } else if (x > 1300 && y < 100){
-        alert("Görevleri aç")
+         gorevlermodal.style.display = "block"; //ADDED
       }
       
     }
@@ -612,6 +656,189 @@
       askNewQues();
     }
 
+        //Bu variablelar görevi yapıp yapmadığını kontrol etmek için var
+    var g_ara
+    var g1
+    var g2
+    var g3
+    var g4
+    var g5
+    var g6
+    var g7
+    var g8
+
+    g1 = true
+    g2 = false
+    g3 = false
+    g4 = false
+    g5 = false
+    g6 = false
+    g7 = false
+    g8 = false
+
+
+    function gorev_1() {
+      if (g1 = true){
+        g2 = true
+        UserValues.level += 1
+        Can -= 20
+        Para += 10
+        UserValues.war_experience += 10
+        UserValues.market_experience += 10
+        UserValues.horse_experience += 5
+        duzeltme()
+        document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+      }
+    }
+
+    function gorev_2() {
+      if (UserValues.level = 2){
+        if (g2 = true){
+          g3 = true
+          UserValues.level += 1
+          Can -= 20
+          Para += 10
+          UserValues.war_experience += 10
+          UserValues.market_experience += 5
+          UserValues.horse_experience += 5
+          duzeltme()
+          document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+        }else{
+          alert('İlk olarak önceki görevleri yapmalısın!')
+        }
+      }else{
+        alert('Seviyen henüz 2 değil!')
+      }
+    }
+
+    function gorev_3() {
+      if (UserValues.level = 3){
+        if (g3 = true){
+          g4 = true
+          UserValues.level += 1
+          Can -= 20
+          Para += 10
+          UserValues.war_experience += 15
+          UserValues.market_experience += 5
+          UserValues.horse_experience += 10
+          duzeltme()
+          document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+        }else{
+          alert('İlk olarak önceki görevleri yapmalısın!')
+        }
+      }else{
+        alert ('Seviyen henüz 3 değil!')
+      }
+    }
+
+    function gorev_4() {
+      if (UserValues.level = 4){
+        if (g4 = true){
+          g5 = true
+          UserValues.level += 1
+          Can -= 20
+          Para += 10
+          UserValues.war_experience += 10
+          UserValues.market_experience += 3
+          UserValues.horse_experience += 15
+          duzeltme()
+          document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+        }else{
+          alert('İlk olarak önceki görevleri yapmalısın!')
+        }
+      }else{
+        alert ('Seviyen henüz 4 değil!')
+      }
+    }
+
+    function gorev_5() {
+      if (UserValues.level = 5){
+        if (g5 = true){
+          g6 = true
+          UserValues.level += 1
+          Can -= 20
+          Para += 10
+          UserValues.war_experience += 10
+          UserValues.market_experience += 3
+          UserValues.horse_experience += 3
+          duzeltme()
+          document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+        }else{
+          alert('İlk olarak önceki görevleri yapmalısın!')
+        }
+      }else{
+        alert ('Seviyen henüz 5 değil!')
+      }
+    }
+
+    function gorev_6() {
+      if (UserValues.level = 6){
+        if (g6 = true){
+          g7 = true
+          UserValues.level += 1
+          Can -= 20
+          Para += 10
+          UserValues.war_experience += 5
+          UserValues.market_experience += 10
+          UserValues.horse_experience += 5
+          duzeltme()
+          document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+        }else{
+          alert('İlk olarak önceki görevleri yapmalısın!')
+        }
+      }else{
+        alert ('Seviyen henüz 6 değil!')
+      }
+    }
+
+    function gorev_7() {
+      if (UserValues.level = 7){
+        if (g7 = true){
+          g8 = true
+          UserValues.level += 1
+          Can -= 20
+          Para += 10
+          UserValues.war_experience += 0
+          UserValues.market_experience += 5
+          UserValues.horse_experience += 5
+          duzeltme()
+          document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+        }else{
+          alert('İlk olarak önceki görevleri yapmalısın!')
+        }
+      }else{
+        alert ('Seviyen henüz 7 değil!')
+      }
+    }
+
+    function gorev_8() {
+      if (UserValues.level = 8){
+        if (g8 = true){
+          UserValues.level += 1
+          Can -= 20
+          Para += 10
+         UserValues.war_experience = 99
+         UserValues.market_experience = 99
+          UserValues.horse_experience = 99 
+         duzeltme()
+         document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+        }else{
+          alert('İlk olarak önceki görevleri yapmalısın!')
+        }
+      }else{
+        alert ('Seviyen henüz 7 değil!')
+      }
+    }
+
+
+    function gorev_ara() {
+      Para += 5
+      UserValues.war_experience += 3
+      UserValues.market_experience += 4
+      UserValues.horse_experience += 2
+      duzeltme()
+      document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+    }
     
   </script>
   </body>

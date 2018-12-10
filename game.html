@@ -689,6 +689,7 @@
           UserValues.horse_experience += 5
           duzeltme()
           document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+          document.getElementById('level').innerHTML = UserValues.level
         }
       }else{
         alert('Yeterli Canın Yok!')
@@ -696,7 +697,7 @@
     }
 
     function gorev_2() {
-      if (Can > 100){
+      if (Can > 20){
         if (UserValues.level = 2){
           if (g2 = true){
             g3 = true
@@ -708,6 +709,7 @@
             UserValues.horse_experience += 5
             duzeltme()
             document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+            document.getElementById('level').innerHTML = UserValues.level
           }else{
             alert('İlk olarak önceki görevleri yapmalısın!')
           }
@@ -732,6 +734,7 @@
             UserValues.horse_experience += 10
             duzeltme()
             document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+            document.getElementById('level').innerHTML = UserValues.level
           }else{
             alert('İlk olarak önceki görevleri yapmalısın!')
           }
@@ -756,6 +759,7 @@
             UserValues.horse_experience += 15
             duzeltme()
             document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+            document.getElementById('level').innerHTML = UserValues.level
           }else{
             alert('İlk olarak önceki görevleri yapmalısın!')
           }
@@ -780,6 +784,7 @@
             UserValues.horse_experience += 3
             duzeltme()
             document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+            document.getElementById('level').innerHTML = UserValues.level
           }else{
             alert('İlk olarak önceki görevleri yapmalısın!')
           }
@@ -804,6 +809,7 @@
             UserValues.horse_experience += 5
             duzeltme()
             document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+            document.getElementById('level').innerHTML = UserValues.level
           }else{
             alert('İlk olarak önceki görevleri yapmalısın!')
           }
@@ -828,6 +834,7 @@
             UserValues.horse_experience += 5
             duzeltme()
             document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+            document.getElementById('level').innerHTML = UserValues.level
           }else{
             alert('İlk olarak önceki görevleri yapmalısın!')
           }
@@ -846,11 +853,12 @@
             UserValues.level += 1
             Can -= 20
             Para += 10
-           UserValues.war_experience = 99
-           UserValues.market_experience = 99
+            UserValues.war_experience = 99
+            UserValues.market_experience = 99
             UserValues.horse_experience = 99 
-           duzeltme()
-           document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+            duzeltme()
+            document.getElementById('experiences').innerHTML = "Ticari: " + UserValues.market_experience + " | Savaşçı: " + UserValues.war_experience + " | Yetiştirici: " + UserValues.horse_experience;
+            document.getElementById('level').innerHTML = UserValues.level
           }else{
             alert('İlk olarak önceki görevleri yapmalısın!')
           }

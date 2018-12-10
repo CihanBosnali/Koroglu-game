@@ -171,6 +171,7 @@
       <button id="B" onclick="answered('B')">B: Cevap B mi?</button>
       <button id="C" onclick="answered('C')">C: Cevap C mi?</button>
       <button id="D" onclick="answered('D')">D: Cevap D mi?</button>
+      <p id="demo3"></p>
 
     </div>
   
@@ -205,9 +206,6 @@
 
         <p id="demo"></p>
 
-        <script type="text/javascript">
-
-        </script>
     </div>
   </div>
 
@@ -233,6 +231,66 @@
   </div>
 
   <script>
+    sorular = ["Bolu Beyinin hangi milletle arası iyi değildir?",
+               "Bolu Beyi neyi ile ünlüdür?",
+               "Bolu Beyini kim ünlü etmiştir?",
+               "Koca Yusuf'un lakabı nedir?",
+               "Yusuf kır atı kaç kere götürmüştür?",
+               "Kır at en son nerede bırakıldığında eve dönmemiştir?",
+               "Hangisi Koca Yusuf'un babasının vasiyetinde yoktur?",
+               "Koca Yusufun oğlunun adı nedir?",
+               "Ruşen Alinin takma adı nedir?",
+               "Bolu Beyi, Koca Yusuf'a ne yaptırmıştır?",
+               "Köroğlu ilk defa ne yaptıktan sonra Koca Yusuf herşeyden çok sevinmiştir?",
+               "Koca Yusuf, Köroğlu'nun serserileri kovalamasından sonra ondan ne istemiştir?",
+               "Koca Yusuf, Bolu Beyi'nin kır ata bakmadığını öğrendiğinde Köroğlu'ndan ne istemiştir?",
+               "Bolu Beyi kır atı razı olarak mı vermiştir? Neden?",
+               "Koca Yusuf neden Köroğlu'na atı çamurun üstünde koşturmasını istemiştir?",
+               "Bolu Beyi'nin pişman olma sebebi nedir?",
+               "Ruşen Ali'nin beşik kertmesi kimdir?",
+               "Bolu Beyi kır at için ne kadar para teklif etmiştir?",
+               "Bolu Beyi'nin bu teklifine karşılık Koca Yusuf ne istemiştir?",
+               "Bolu Beyi'nin birinci cengaveri olarak tanımlanan kişi kimdir?",
+               "Reyhan Arap'ın yaşadığı çelişki nedir?",
+               "Köroğlu ve Koca Yusuf doru atı nasıl atlatmışlardır?",
+               "Reyhan Arap öldürülmüş/bayıltılmış mıdır? Kim bunu yapmıştır?",
+               "Köpükler nereden gelmektedir?",
+               "Dereden gelen kaç tane köpük vardır?",
+               "Köpüklerin renkleri nelerdir?",
+               "Hangisi Ruşen Ali'nin içtiği köpüklerden biridir?",
+               "Hangi renkteki köpük Ruşen Ali'yi aşık etmiştir?",
+               "Çamlıbel neresidir?",
+               "Koca Yusuf'un ölmeden önce yaptığı şey nedir?",
+               "Koca yusuf'un oğluna son vasiyeti nedir?",
+               "Köroğlu'nun sevdiceği kimdir?",
+               "Telli Nigar kimin kardeşidir?",
+               "Telli Nigar'ı kim istemiştir?",
+               "Telli nigar nasıl tanınmaktadır?",
+               "Köroğlu kır atı nasıl tanımıştır?",
+               "Köroğlu babasının son vasiyetini gerçekleştirmiş midir?",
+               "Köroğlu pınarın kenarında dinlenirken hangi neyi avlayıp getirmiştir?",
+               "Kim Çamlıbel'in sahibidir?",
+               "Köroğlu, Köse Kenan ile dövüşmüş müdür? Kim kazanmıştır?",
+               "Köse Kenan'ın, Köroğluna sen icat et dediği şey nedir?",
+               "Köroğlu'nun bundan sonra akıl hocası kimdir?",
+               "Köroğlu'nun ilk soymaya çalıştığı şey nedir?",
+               "Köroğlu ilk soygununu nasıl yapmıştır?",
+               "Köroğlu'nun ilk soymayı başardığı kişi ne ile öne çıkmıştır?",
+               "Kervanlardan soyulan şeyler kimlere veriliyordur?",
+               "Köse Kenan Köroğlu'na ne olacağını söylemiştir",
+               "Köse Kenan bezirganbaşına(Köroğlu'nun bayılttığı kişi) ne yapmıştır?",
+               "Köse Kenan, Köroğluna neyin sözünü verip tutmuştur?"]
+
+    cevaplar = [["Osmanlı" , "Diğer Anadolu Beyleri" , "Frenkler" , "İranlılar"],
+                ["Yakışıklı olmasıyla", "Devletinin gücüyle", "Atlarıyla" ,"Kendi fiziksel gücüyle"],
+                ["Köroğlu" , "Koca Yusuf" , "Kendisi" , "Padişah"],
+                ["Atların Sultanı" , "Atların Kralı" , "Atların Padişahı", "Atların Beyi"],
+                ["1" , "3" , "5" , "2"],
+                ["Bereketli bir ovada", "Sık ağaçlı bir ormanda", "Gözün gözü görmediği çok sisli bir vadide", "Masmavi denizin olduğu Sahilde"],
+                ["Başına buyruk ol", "Evlenirsen eşin Osmanlı soyundan olsun", "At yetiştirmeye devam et" , "Kula kul olma"], ["Muhammed Ali" , "Ruşen Ali", "Rasim Ali" , "Rahman Ali"], ["Körçocuğu" , "Körevladı" , "Köroğlu" , "Atçıoğlu"], ["Astırmıştır" , "Kellesini vurdurmuştur" , "Ellerini kestirmiştir" , "Gözlerine mil çektirmiştir"], ["Serserileri sopa ile kovalayıp aldığı ekmekleri kaptırmayınca", "Bolu Beyi'nin karşısına çıkıp beyliği isteyince", "Osmanlı ile bir olup Bolu Beyini devirip beyliği alınca", "Bolu Beyi'nin tüm atlarını öldürünce"], ["Onu Bolu Beyinin tavlasına sokmasını istemiştir", "Bolu Beyinin tüm atlarını öldürmesini istemiştir" , "Bolu Beyinin tavlasını yakmasını istemiştir" , "Bolu Beyinin yaşadığı yeri yakmasını istemiştir."], ["Bolu Beyine baskın yapıp kır atı çalmasını", "Sessizce gidip Bolu Beyini öldürmesi" , "Bolu'Beyinden kır atı istemesini" , "Bolu Beyine baskın yapıp onu öldürmesini"],["Evet. Atlar çok kötü durumdaydı ve boşuna bakıyorlardı" , "Evet. Koca Yusuf'un kır atı çok sevdiğinden dolayı onun olduğunu düşündü" , "Hayır. Köroğlu'ndan bir miktar altın istemiştir.", "Hayır. Koca Yusuf'u saray'a getirip öldürülmesine müsaade etmesini istemiştir."],["Atın çamurda batarak ölmesini istediği için" , "Oğlunun kötü bir sürücü olduğunu göstermek için" , "Atı eğitmek için" , "Atın hazır olup olmadığını anlamak için"],["Köroğlu'na verdiği atı çok güzel bir şekilde gördüğünden dolayı", "Köroğlu'na verdiği at öldüğünden dolayı Koca Yusuf da üzgünlüğünden öldüğünden", "Köroğlu'na verdiği at ile birlikte Koca Yusuf'un çok sevdiği üç atın çok güzel atlar olmasından dolayı Koca Yusuf'a bir anlık sinirle mil çektirmesi" ,"Osmanlı'ya bu atları yollamadı için"],["Komşusunun kızı", "Bolu beyinin kız kardeşi" , "Koca Yusuf'un yeğeni" , "Bolu beyinin kızı"],["49000 altın" , "20000 altın" , "30210 altın" , "Ne kadar istiyor ise o kadar altın"],["Hazinedeki bütün altını" , "Bir çift göz" , "Ülkenin topraklarının dörtte birini" , "Diğer iki atın Osmanlı'ya verilmemesini"],["Reyhan Arap" , "Reyhan Türk", "Ramiz Arap" , "Ramiz Türk"],["İntihar edip etmeme çelişkisi" , "Bolu Beyi'ni öldürüp öldürmeme çelişkisi" , "Koca Yusuf ve oğlunu öldürüp öldürmeme çelişkisi" , "Hristiyan olup olmama çelişkisi],[Yola çivi atarak" , "Koca Yusuf kendini feda etmiştir" , "Kumsala sürmüşlerdir" , "Köroğlu kendini feda etmiştir"],["Ölmüştür. Köroğlu yapmıştır" , "Bayılmıştır. Köroğlu yapmıştır" , "Ölmüştür. Koca Yusuf yapmıştır" , "Bayılmıştır. Kocayusuf yapmıştır"],["Köprüden" , "Havadan" , "Dereden" , "Ormandan"],["Üç", "Beş","Dört","Yedi"],["Yeşil, kırmızı, boz", "Yeşil, sarı, boz", "Turuncu, yeşil, sarı", "Kırmızı, boz, turuncu"],["Boz", "Turkuaz", "Bordo", "Mor"],["Sarı","Mavi","Yeşil","Boz"], ["Birçok yerden gelen ve bir çok yere giden kervanların kesin olarak geçtiği yerdir.", "Deniz'in en güzel göründüğü, kimsenin bilmediği kuytu bir yer.", "Bolu Beyi'nin en sevdiği havasının çok ferah olduğu bir yer.", "Haydutların en çok barındığı bir yer."], ["Bolu Beyi'ne hançer saplamak","Oğluna şiir okumak","Köpükleri içmek", "Bolu Beyi ile şavaşmak"],["Bolu Beyi'ni öldürmesi","Sevdiceğini geri alması","Bolu'dan biri ile evlenmemesi","Çamlıbel'den başka yerde yuva yapmaması"],["Yoktur","Geveze Nigar","Telli Necmiye","Telli Nigar"],["Bolu Beyi","Koca Yusuf","Köroğlu","Osmanlı padişahı"],["Osmanlı Veziri", "Osmanlı padişahının oğlu", "Osmanlı padişahı", "Osmanlı Veziri'nin oğlu"],["Güzel", "Kurnaz/Zeki", "Acımasız", "Çirkin"],["Kulağının arkasındaki mavi benekten", "Koşturup hızından","Vücudunun şeklinden","Toynaklarının şeklinden"],["Evet","Hayır"],["Bıldırcın","Geyik","İnek","Üveyik"],["Köse Soykut","Köse Kenan","Köse Cihan","Köse Kudret"],["Dövüşmüşür, berabere","Dövüşmüştür, Köroğlu","Dövüşmüştür, Köse Kenan","Dövüşmemiştir"],["Kelle kesmeden kervan soymak","İkna yolu ile kervan soymak","Kervanları kimse farketmeden soymak","Kervan başları ile anlaşarak soymak"],["Kimse","Bolu Beyi","Köse Kenan","Telli Nigar"],["Tüccar","Kervan","Çerçi","Çoban"],["Herkesi öldürerek","Kimseye dokunmadan ve görünmeden","Ona karşı gelenleri bayıltarak","Yapamamıştır"],["Toyluğu","Zenginliği","Soyulamamışlığı","Yakışıklılığı"],["Fakirlere","Beylere satılıyordur","Padişaha satılıyordur","Beylere ve padişaha hediye olarak dağıtlıyordur",],["Padişah","Çamlıbel'in Beyi","Bolu Beyi","Çamlıbel'in padişahı"],["Öldürtmüştür","İşkence etmiştir","Yaralarını sarmıştır","Serbest bırakmıştır"],["Çok güzel bir kılıç","En az kır at kadar güzel bir at","Kırk gün kırk gece düğün","Telli Nigar'ı aratmayacak bir kadın"]]
+
+    answerKey=["A","C","B","C","B","D","B","B","C","D","A","A","C","A","D","C","B","D","B","A","C","C","D","C","A","B","A","C","A","B","D","D","A","D","B","A","A","D","B","D","A","C","B","C","C","A","D","C","C"]
+    
     var questionID = 0;
     var UserValues = new Object;
 
@@ -244,6 +302,19 @@
 
     var aksiyonlarmodal = document.getElementById('aksiyonlarmodal');
     var aksiyonlarspan = document.getElementById('aksiyonlarclose');
+
+    function askNewQues(){
+      questionID = Math.floor(Math.random()*sorular.length);
+      console.log(questionID);
+      QuesToASk = sorular[questionID];
+      possibleAns = cevaplar[questionID];
+      correctAns = answerKey[questionID];
+      document.getElementById("soru").innerHTML = QuesToASk;
+      document.getElementById("A").innerHTML = possibleAns[0];
+      document.getElementById("B").innerHTML = possibleAns[1];
+      document.getElementById("C").innerHTML = possibleAns[2];
+      document.getElementById("D").innerHTML = possibleAns[3];
+    }
 
     dedekorkutspan.onclick = function() {
       dedekorkutmodal.style.display = "none";
@@ -364,6 +435,7 @@
       Can = UserValues.health
       if (x < 100 && y < 100){
         dedekorkutmodal.style.display = "block";
+        askNewQues();
       } else if (x < 100 && y < 220 && y > 120){
         pazaryerimodal.style.display = "block";
       } else if (x < 100 && y < 340 && y > 240){
@@ -529,12 +601,20 @@
     }
     
     function answered(answer){
-      if (answer == answersArray[questionID]) {
-        alert("CORRECT")
+      if (answer == answerKey[questionID]) {
+        UserValues.horse_experience += 1;
+        UserValues.market_experience += 1;
+        UserValues.war_experience += 1;
+        document.getElementById("demo3").innerHTML = "Tüm Deneyimlerin 1 arttı!"; 
       } else {
-        alert("WRONG")
+        document.getElementById("demo3").innerHTML = "Cevabı bilemedin. Doğru cevap "+answerKey[questionID]+" olacaktı."; 
       }
+      askNewQues();
     }
+
+    
   </script>
   </body>
 </html>
+
+
